@@ -20,6 +20,8 @@
     "sucrase": "^3.28.0"
   },
   "devDependencies": {
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.2.1",
     "prisma": "^4.14.1"
   }
 }

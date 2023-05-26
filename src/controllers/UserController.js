@@ -1,19 +1,36 @@
 import { PrismaClient } from "@prisma/client";
 import { hash } from "bcrypt";
-const prisma = new PrismaClient();
+import { MongoClient } from "mongodb";
+// const prisma = new PrismaClient();
+
+import mongoose from "mongoose";
+
+const mongoClient = new MongoClient();
+
+const userSchema = new mongoose.Schema();
 
 export default {
   async createUser(request, response) {
+    const { name, email, passord } = request.body;
 
+    try {
+      let user = await mongoClient.find;
+    } catch (error) {}
+  },
+};
+
+/*
+export default {
+  async createUser(request, response) {
     const { name, email, password } = request.body;
 
     try {
       let user = await prisma.user.findUnique({ where: { email } });
 
       if (user) {
-        return response.json({ 
+        return response.json({
           error: true,
-          message: "Erro: Usuário já existe!" 
+          message: "Erro: Usuário já existe!",
         });
       }
 
@@ -23,18 +40,17 @@ export default {
         data: {
           name,
           email,
-          password: HashPassword
-        }
+          password: HashPassword,
+        },
       });
 
       return response.json({
         error: false,
         message: "Sucesso: Usuário cadastrado com sucesso!",
-        user
+        user,
       });
-
     } catch (error) {
-      return response.json({ message: error.message })
+      return response.json({ message: error.message });
     }
   },
 
@@ -43,9 +59,8 @@ export default {
       const user = await prisma.user.findMany();
 
       return response.json(user);
-
     } catch (error) {
-      return response.json({ message: error.message })
+      return response.json({ message: error.message });
     }
   },
 
@@ -54,13 +69,14 @@ export default {
       const { userId } = request.params;
 
       const user = await prisma.user.findUnique({
-        where: { id : Number(userId) }
+        where: { id: Number(userId) },
       });
       delete user.password;
       return response.json(user);
-
     } catch (error) {
-      return response.json({ message: error.message })
+      return response.json({ message: error.message });
     }
-  }
-}
+  },
+};
+
+*/
