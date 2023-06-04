@@ -1,0 +1,30 @@
+GET http://localhost:8000/listusers
+
+###
+GET  http://localhost:8000/listimobi
+
+###
+POST http://localhost:8000/createusers
+Content-Type: application/json
+
+{
+    "name": "Sidnei Mitani",
+    "email": "sidnei@mitani.com",
+    "password": "anna2001"
+}
+
+
+
+
+
+
+
+###router.post('/creatusers'
+### get('/listusers
+### get('/listusers/:userId'
+### post('/session'
+### post('/createimobi', upload.single("thumb"), ImobiController.craeteImobi);
+### get('/listimobi'
+### get('/listimobi/:slug', 
+### post('/createmessage', 
+### get('/listmessage/:id',,
