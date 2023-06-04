@@ -4,13 +4,16 @@ GET http://localhost:8000/listusers
 GET  http://localhost:8000/listimobi
 
 ###
-POST http://localhost:8000/createusers
+GET  http://localhost:8000/session
+
+###
+POST http://localhost:8000/creatusers
 Content-Type: application/json
 
 {
-    "name": "Sidnei Mitani",
-    "email": "sidnei@mitani.com",
-    "password": "anna2001"
+    "name": "Amado Batista",
+    "email": "amado@batista.com",
+    "password": "brega"
 }
 
 
