@@ -1,25 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { hash } from "bcrypt";
-import { MongoClient } from "mongodb";
-// const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 
-import mongoose from "mongoose";
-
-const mongoClient = new MongoClient();
-
-const userSchema = new mongoose.Schema();
-
-export default {
-  async createUser(request, response) {
-    const { name, email, passord } = request.body;
-
-    try {
-      let user = await mongoClient.find;
-    } catch (error) {}
-  },
-};
-
-/*
 export default {
   async createUser(request, response) {
     const { name, email, password } = request.body;
@@ -78,5 +60,3 @@ export default {
     }
   },
 };
-
-*/
